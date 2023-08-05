@@ -16,12 +16,11 @@
 1.  In `AutoHotkey`, the starting index of an array is `1`.
 2.  To remain interval `[left,right)` ,The selection range of an array is `(1, Array's length + 1)`.
     -   `Array's length + 1` is used to select the last element.
-    -   eg. `[ 11, 22, 33, 44, 55 ]`
-        -   `(start, end)` => `[ ]`
-        -   `(2, 4)` => `[ 22, 33 ]`
-        -   `(1, 5)` => `[ 11, 22, 33, 44 ]`
-        -   `(1)` => `[ 11, 22, 33, 44, 55 ]`
-        -   `(1, 6)` => `[ 11, 22, 33, 44, 55 ]`
+    -   eg. `arr_slice(arr, start, end := arr.Length + 1)`
+        -   `arr_slice([11, 22, 33, 44, 55 ], 3, 5)` => `[33, 44]`
+        -   `arr_slice([11, 22, 33, 44, 55 ], 3)` => `[33, 44, 55]`
+        -   `arr_slice([11, 22, 33, 44, 55 ], 3, 6)` => `[33, 44, 55]`
+        -   `arr_slice([11, 22, 33, 44, 55 ], 1, -2)` => `[11, 22, 33]`
 
 ### About Parameter validation
 
