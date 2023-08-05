@@ -1,12 +1,16 @@
 /**
- * Sort an array in ascending(1) or descending(-1) order
+ * Sort an array in ascending(1) or descending(-1) order. The original array will be modified.
  * @param {Array} arr
  * @param {Integer} order 1/-1
- * @returns {Array}
- * @example arr_sort([6, 2, 11, 5], 1) ; return [2, 5, 6, 11]
- *  arr_sort([6, 2, 11, 5], -1) ; return [11, 6, 5, 2]
+ * @returns {Array} Modified original array
+ * @example a := [6, 2, 11, 5]
+ *  arr_sort(&a, 1) ; return [2, 5, 6, 11]
+ *  ; a => [2, 5, 6, 11]
+ *  arr_sort(&a, -1) ; return [11, 6, 5, 2]
+ *  ; a => [11, 6, 5, 2]
+ *  arr_sort([3, 1, 2]) ; return [1, 2, 3]
  */
-arr_sort(arr, order := 1) {
+arr_sort(&arr, order := 1) {
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
         throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires Array, but received " Type(arr) ".", -1)
@@ -19,5 +23,6 @@ arr_sort(arr, order := 1) {
     for i, v in arr {
         res .= i = arr.Length ? v : v ","
     }
-    return order = 1 ? StrSplit(Sort(res, "N D,"), ",") : StrSplit(Sort(res, "N R D,"), ",")
+    arr := order = 1 ? StrSplit(Sort(res, "N D,"), ",") : StrSplit(Sort(res, "N R D,"), ",")
+    return arr
 }

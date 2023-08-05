@@ -1,7 +1,7 @@
 /**
  * Reverse Iteration Array, and return the index of the first element in the array that match the callback function, otherwise return ""
  * @param {Array} arr
- * @param {Func} callback
+ * @param {Func} callback callback(element,index)
  * @returns index / ""
  * @example arr_findLastIndex([4, 5, 6], v => v > 6) ; return ""
  *  arr_findLastIndex([4, 5, 6], (v, i) => i > 1) ; return 3

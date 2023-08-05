@@ -2,7 +2,7 @@
  * Recursively concatenate all subarray elements into a new array based on the specified depth, and return it.
  * @param {Array} arr
  * @param {Integer} depth
- * @returns {Array}
+ * @returns {Array} new array
  * @example arr_flat([1, [2, 3, [4, 5]]], 1) ; return [1, 2, 3, [4, 5]]
  *  arr_flat([1, [2, 3, [4, 5]]], 2) ; return [1, 2, 3, 4, 5]
  */

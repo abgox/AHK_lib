@@ -1,9 +1,9 @@
 /**
- * Returns a new array obtained by slicing from start to end in arr (including start and excluding end). The original array will not be changed.
+ * Returns a new array obtained by slicing from start to end in arr (including start and excluding end). The original array will not be modified.
  * @param {Array} arr
  * @param {Integer} start
  * @param {Integer} end {@link https://github.com/abgox/AHK_lib#about-array|Why?(end <= arr.Length + 1)}
- * @returns {Array}
+ * @returns {Array} new array
  * @example arr_slice([6, 2, 11, 5], 2) ; return [2, 11, 5]
  *  arr_slice([6, 2, 11, 5], -2) ; return [11, 5]
  *  arr_slice([6, 2, 11, 5], 1, -2) ; return [6, 2]
