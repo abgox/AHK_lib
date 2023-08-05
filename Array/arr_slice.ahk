@@ -21,9 +21,9 @@ arr_slice(arr, start, end := arr.Length + 1) {
     }
     ;@Ahk2Exe-IgnoreEnd
 
-    res := []
-    start := start < 0 ? start + arr.Length + 1 : start
-    end := end < 0 ? end + arr.Length + 1 : end
+    res := [],
+        start := start < 0 ? start + arr.Length + 1 : start,
+        end := end < 0 ? end + arr.Length + 1 : end
     while (start < end) {
         res.Push(arr[start])
         start++

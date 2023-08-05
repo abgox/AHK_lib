@@ -1,14 +1,14 @@
 /**
- * Return a new array containing all values that match the callback function.
+ * Check whether all the elements in the array match the callback function or not, and returns a boolean result.
  * @param {Array} arr
  * @param {Func} callback callback(element,index)
- * @returns {Array} new array
- * @example arr_filter([1, 2, 3], v => v > 1) ; return [2,3]
- *  arr_filter([1, 2, 3], v => v > 3) ; return []
- *  arr_filter(['a', 'aa', 'c'], v => InStr(v,'a')) ; return ['a','aa']
+ * @returns {Boolean} true/false
+ * @example arr_some([1, 2, 3], v => v > 1) ; return true
+ *  arr_some(['a', 'b', 'c'], (v, i) => i > 3) ; return false
+ *  arr_some(['a', 'b', 'c'], v => InStr(v,'a')) ; return true
  */
-arr_filter(arr, callback) {
-    params := callback.MinParams, res := []
+arr_some(arr, callback) {
+    params := callback.MinParams
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
         throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires an Array, but received " Type(arr) ".", -1)
@@ -22,13 +22,13 @@ arr_filter(arr, callback) {
     for i, v in arr {
         if (params = 1) {
             if (callback(v)) {
-                res.Push(v)
+                return true
             }
         } else {
             if (callback(v, i)) {
-                res.Push(v)
+                return true
             }
         }
     }
-    return res
+    return false
 }
