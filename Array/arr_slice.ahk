@@ -4,17 +4,18 @@
  * @param {Integer} start
  * @param {Integer} end {@link https://github.com/abgox/AHK_lib#about-array|Why?(end <= arr.Length + 1)}
  * @returns {Array}
- * @example arr_slice([6,2,11,5],1) ; return [2,5,6,11]
- *  arr_sort([6,2,11,5],-1) ; return [11,6,5,2]
+ * @example arr_slice([6, 2, 11, 5], 2) ; return [2, 11, 5]
+ *  arr_slice([6, 2, 11, 5], -2) ; return [11, 5]
+ *  arr_slice([6, 2, 11, 5], 1, -2) ; return [6, 2]
  */
 arr_slice(arr, start, end := arr.Length + 1) {
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
-        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires Array, but received " Type(arr) ".", -1)
+        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires an Array, but received " Type(arr) ".", -1)
     } else if (Type(start) != 'Integer') {
-        throw TypeError("Parameter #3 of function( " A_ThisFunc " ) requires Integer, but received " Type(start) ".", -1)
+        throw TypeError("Parameter #3 of function( " A_ThisFunc " ) requires an Integer, but received " Type(start) ".", -1)
     } else if (Type(end) != 'Integer') {
-        throw TypeError("Parameter #4 of function( " A_ThisFunc " ) requires Integer, but received " Type(end) ".", -1)
+        throw TypeError("Parameter #4 of function( " A_ThisFunc " ) requires an Integer, but received " Type(end) ".", -1)
     } else if (start = 0) {
         throw ValueError("Parameter #3 of function( " A_ThisFunc " ) cannot be 0.`n          The starting index of the array is 1 instead of 0.", -1)
     }

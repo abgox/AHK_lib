@@ -9,9 +9,11 @@
 arr_flat(arr, depth := 1) {
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
-        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires Array, but received " Type(arr) ".", -1)
-    } else if (Type(depth) != 'Integer' || depth < 1) {
-        throw TypeError("Parameter #2 of function( " A_ThisFunc " ) requires a Positive integer(>=1).", -1)
+        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires an Array, but received " Type(arr) ".", -1)
+    } else if (Type(depth) != 'Integer') {
+        throw TypeError("Parameter #2 of function( " A_ThisFunc " ) requires a Positive integer, but received " Type(depth) ".", -1)
+    } else if (depth < 1) {
+        throw ValueError("Parameter #2 of function( " A_ThisFunc " ) requires a Positive integer(>=1).", -1)
     }
     ;@Ahk2Exe-IgnoreEnd
 

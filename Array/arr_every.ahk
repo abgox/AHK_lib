@@ -10,9 +10,11 @@
 arr_every(arr, callback) {
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
-        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires Array, but received " Type(arr) ".", -1)
-    } else if (Type(callback) != 'Func' || callback.MinParams != 1) {
-        throw TypeError("Parameter #2 of function( " A_ThisFunc " ) requires a function with one parameter.", -1)
+        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires an Array, but received " Type(arr) ".", -1)
+    } else if (Type(callback) != 'Func') {
+        throw TypeError("Parameter #2 of function( " A_ThisFunc " ) requires a function, but received " Type(callback) ".", -1)
+    } else if (callback.MinParams != 1) {
+        throw ValueError("Parameter #2 of function( " A_ThisFunc " ) requires a function with one parameter.", -1)
     }
     ;@Ahk2Exe-IgnoreEnd
 
