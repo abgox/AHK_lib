@@ -1,15 +1,16 @@
 /**
- * Reverses the order of elements in an array, and the original array will be modified.
+ * Reverses the order of elements in an array.
+ * @tip The original array will be modified.
  * @param {Array} arr
- * @returns {Array} Modified original array
- * @example a := ['aa', 'bb', 1, 2]
- *  arr_reverse(a) ; return [2, 1, 'bb', 'aa']
- *  ; a => [2, 1, 'bb', 'aa']
+ * @returns {Array}
+ * @example testArr := ['aa', 'bb', 1, 2]
+ *  arr_reverse(testArr) ; return [2, 1, 'bb', 'aa']
+ *  ; testArr => [2, 1, 'bb', 'aa']
  */
 arr_reverse(arr) {
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
-        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires Array, but received " Type(arr) ".", -1)
+        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires an Array, but received " Type(arr) ".", -1)
     }
     ;@Ahk2Exe-IgnoreEnd
 

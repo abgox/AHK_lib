@@ -2,7 +2,7 @@
  * Return the value of the first element in the array that match the callback function, otherwise return ""
  * @param {Array} arr
  * @param {Func} callback callback(element,index)
- * @return value / ""
+ * @return value/""
  * @example arr_find([4, 5, 6], v => v > 6) ; return ""
  *  arr_find([4, 5, 6], (v, i) => i > 1) ; return 5
  *  arr_find(['aa', 'cc', 'ccc'], v => InStr(v,'c')) ; return 'cc'

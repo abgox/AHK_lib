@@ -1,19 +1,20 @@
 /**
- * Sort an array in ascending(1) or descending(-1) order. The original array will be modified.
+ * Sort an array in ascending(1) or descending(-1) order.
+ * @tip The original array will be modified.
  * @param {Array} arr
  * @param {Integer} order 1/-1
- * @returns {Array} Modified original array
- * @example a := [6, 2, 11, 5]
- *  arr_sort(&a, 1) ; return [2, 5, 6, 11]
- *  ; a => [2, 5, 6, 11]
- *  arr_sort(&a, -1) ; return [11, 6, 5, 2]
- *  ; a => [11, 6, 5, 2]
+ * @returns {Array}
+ * @example testArr := [6, 2, 11, 5]
+ *  arr_sort(&testArr, 1) ; return [2, 5, 6, 11]
+ *  ; testArr => [2, 5, 6, 11]
+ *  arr_sort(&testArr, -1) ; return [11, 6, 5, 2]
+ *  ; testArr => [11, 6, 5, 2]
  *  arr_sort([3, 1, 2]) ; return [1, 2, 3]
  */
 arr_sort(&arr, order := 1) {
     ;@Ahk2Exe-IgnoreBegin
     if (Type(arr) != 'Array') {
-        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires Array, but received " Type(arr) ".", -1)
+        throw TypeError("Parameter #1 of function( " A_ThisFunc " ) requires an Array, but received " Type(arr) ".", -1)
     } else if (order != 1 && order != -1) {
         throw ValueError("Parameter #2 of function( " A_ThisFunc " ) can only be 1 or -1.", -1)
     }

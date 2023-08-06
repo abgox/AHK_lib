@@ -1,16 +1,17 @@
 /**
- * Remove/replace certain elements at a given index from an array, and the original array will be modified.
+ * Remove/replace certain elements at a given index from an array.
+ * @tip The original array will be modified.
  * @param {Array} arr
- * @param {Integer} start
+ * @param {Integer} start {@link https://github.com/abgox/AHK_lib#about-array|Why?(start >= 1)}
  * @param {Integer} deleteCount
  * @param {Any} items*
- * @example a := ['a', 'b', 'c','d']
- * arr_splice(a, 3, 0, 'cc')
- * ; a => ['a', 'b', 'cc', 'c', 'd']
- * arr_splice(a, 3, 1, 'dd')
- * ; a => ['a', 'b', 'dd', 'c', 'd']
- * arr_splice(a, 2, 4, 'ee')
- * ; a => ['a', 'ee']
+ * @example testArr := ['a', 'b', 'c','d']
+ * arr_splice(testArr, 3, 0, 'cc')
+ * ; testArr => ['a', 'b', 'cc', 'c', 'd']
+ * arr_splice(testArr, 3, 1, 'dd')
+ * ; testArr => ['a', 'b', 'dd', 'c', 'd']
+ * arr_splice(testArr, 2, 4, 'ee')
+ * ; testArr => ['a', 'ee']
  */
 arr_splice(arr, start, deleteCount, items*) {
     ;@Ahk2Exe-IgnoreBegin

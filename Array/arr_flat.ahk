@@ -1,10 +1,14 @@
 /**
  * Recursively concatenate all subarray elements into a new array based on the specified depth, and return it.
+ * @tip The original array will not be modified.
  * @param {Array} arr
  * @param {Integer} depth
- * @returns {Array} new array
- * @example arr_flat([1, [2, 3, [4, 5]]], 1) ; return [1, 2, 3, [4, 5]]
- *  arr_flat([1, [2, 3, [4, 5]]], 2) ; return [1, 2, 3, 4, 5]
+ * @returns {Array}
+ * @example testArr := [1, [2, 3, [4, 5]]]
+ *  arr_flat(testArr, 1) ; return [1, 2, 3, [4, 5]]
+ *  ; testArr => [1, [2, 3, [4, 5]]]
+ *  arr_flat(testArr, 2) ; return [1, 2, 3, 4, 5]
+ *  ; testArr => [1, [2, 3, [4, 5]]]
  */
 arr_flat(arr, depth := 1) {
     ;@Ahk2Exe-IgnoreBegin

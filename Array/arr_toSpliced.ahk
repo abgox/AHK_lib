@@ -1,17 +1,18 @@
 /**
- * It returns a new array, and removes/replaces some elements at the given index. The original array will not be modified.
+ * It returns a new array, and removes/replaces some elements at the given index.
+ * @tip The original array will not be modified.
  * @param {Array} arr
- * @param {Integer} start
+ * @param {Integer} start {@link https://github.com/abgox/AHK_lib#about-array|Why?(start >= 1)}
  * @param {Integer} deleteCount
  * @param {Any} items*
- * @returns {Array} new array
- * @example a := ['a', 'b', 'c','d']
- * arr_toSpliced(a, 3, 0, 'cc') ; return  ['a', 'b', 'c','d']
- * ; a => ['a', 'b', 'c','d']
- * arr_toSpliced(a, 3, 1, 'dd') ; return ['a', 'b', 'dd', 'c', 'd']
- * ; a => ['a', 'b', 'c','d']
- * arr_toSpliced(a, 2, 4, 'ee') ; return ['a', 'ee']
- * ; a => ['a', 'b', 'c','d']
+ * @returns {Array}
+ * @example testArr := ['a', 'b', 'c','d']
+ * arr_toSpliced(testArr, 3, 0, 'cc') ; return  ['a', 'b', 'cc', 'c', 'd']
+ * ; testArr => ['a', 'b', 'c','d']
+ * arr_toSpliced(testArr, 3, 1, 'dd') ; return ['a', 'b', 'dd', 'c', 'd']
+ * ; testArr => ['a', 'b', 'c','d']
+ * arr_toSpliced(testArr, 2, 4, 'ee') ; return ['a', 'ee']
+ * ; testArr => ['a', 'b', 'c','d']
  */
 arr_toSpliced(arr, start, deleteCount, items*) {
     ;@Ahk2Exe-IgnoreBegin

@@ -1,11 +1,12 @@
 /**
- * Add the specified element to the beginning of the array and return the new length of the array.The original array will be modified.
+ * Add the specified element to the beginning of the array and return the new length of the array.
+ * @tip The original array will be modified.
  * @param {Array} arr
  * @param {Any} items*
  * @return {Integer} arr.Length
- * @example a := ['aa', 'bb', 1, 2]
- *  arr_unshift(a, 'a', 'b') ; return 6
- *  ; a := ['a', 'b', 'aa', 'bb', 1, 2]
+ * @example testArr := ['aa', 'bb', 1, 2]
+ *  arr_unshift(testArr, 'a', 'b') ; return 6
+ *  ; testArr => ['a', 'b', 'aa', 'bb', 1, 2]
  */
 arr_unshift(arr, items*) {
     ;@Ahk2Exe-IgnoreBegin

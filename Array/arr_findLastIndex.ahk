@@ -2,7 +2,7 @@
  * Reverse Iteration Array, and return the index of the first element in the array that match the callback function, otherwise return ""
  * @param {Array} arr
  * @param {Func} callback callback(element,index)
- * @returns index / ""
+ * @returns index/""
  * @example arr_findLastIndex([4, 5, 6], v => v > 6) ; return ""
  *  arr_findLastIndex([4, 5, 6], (v, i) => i > 1) ; return 3
  *  arr_findLastIndex(['aa', 'cc', 'ccc'], v => InStr(v,'c')) ; return 3
